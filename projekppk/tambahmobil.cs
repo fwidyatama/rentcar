@@ -17,7 +17,7 @@ namespace projekppk
         public TambahMobil()
         {
             InitializeComponent();
-            String connectionInfo = "datasource=localhost; port=3306; username=root; password=; database=projectppk; SslMode=none";
+            String connectionInfo = "datasource=localhost; port=3306; username=root; password=bumiasri; database=projectppk; SslMode=none";
             connection = new MySqlConnection(connectionInfo);
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -31,13 +31,19 @@ namespace projekppk
         }
 
         private void btnsewamobil_Click(object sender, EventArgs e)
-        {
-            Convert.ToInt64(this.materialSingleLineTextField1.Text);
+        {            
+            //Int32.Parse(this.materialSingleLineTextField1.Text.ToString());
             if (tbMerk.Text != "" && tbTipe.Text != "" && materialSingleLineTextField1.Text != "" && materialSingleLineTextField2.Text != "")
             {
                 try
                 {
-                    string Query = "insert into mobil(merk,tipe,harga,plat_nomor) values('" + this.tbMerk.Text + "','" + this.tbTipe.Text + "','" + Convert.ToInt64(this.materialSingleLineTextField1.Text) + "','" + Convert.ToInt64(this.materialSingleLineTextField2.Text)+ "')";
+                    string Query = "" +
+                        "insert into mobil(merk,tipe,harga,plat_nomor) " +
+                        "values(" +
+                            "'" + this.tbMerk.Text + 
+                            "','" + this.tbTipe.Text + 
+                            "','" + Convert.ToInt64(this.materialSingleLineTextField1.Text) + 
+                            "','" + this.materialSingleLineTextField2.Text + "')";
                     MySqlCommand tambah = new MySqlCommand(Query, connection);
                     MySqlDataReader reader;
                     connection.Open();

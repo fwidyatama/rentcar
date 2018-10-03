@@ -17,7 +17,7 @@ namespace projekppk
         public home()
         {
             InitializeComponent();
-            String connectionInfo = "datasource=localhost; port=3306; username=root; password=; database=projectppk; SslMode=none";
+            String connectionInfo = "datasource=localhost; port=3306; username=root; password=bumiasri; database=projectppk; SslMode=none";
             connection = new MySqlConnection(connectionInfo);
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -27,7 +27,7 @@ namespace projekppk
 
         private void home_Load(object sender, EventArgs e)
         {
-            string query = "select id,merk,tipe,harga,plat_nomor from mobil";
+            string query = "select * from mobil";
             connection.Open();
             MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -37,19 +37,20 @@ namespace projekppk
             materialListView1.View = View.Details;
             materialListView1.Columns.Add("ID");
             materialListView1.Columns.Add("MERK");
-            materialListView1.Columns.Add("TIPE");
+            materialListView1.Columns.Add("TIPE");            
             materialListView1.Columns.Add("HARGA");
             materialListView1.Columns.Add("PLAT NOMOR");
+            materialListView1.Columns.Add("Status");
 
             while (reader.Read())
             {
-                var item = new ListViewItem();
-                
+                var item = new ListViewItem();                
                 item.Text = reader["id"].ToString();        
                 item.SubItems.Add(reader["merk"].ToString());  
                 item.SubItems.Add(reader["tipe"].ToString());
                 item.SubItems.Add(reader["harga"].ToString());
                 item.SubItems.Add(reader["plat_nomor"].ToString());
+                item.SubItems.Add(reader["status"].ToString() == "True" ? "Tersedia" : "Tidak Tersedia");
                 materialListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 materialListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                 materialListView1.Items.Add(item);

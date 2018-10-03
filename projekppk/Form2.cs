@@ -17,7 +17,7 @@ namespace projekppk
         public Order()
         {
             InitializeComponent();
-            String connectionInfo = "datasource=localhost; port=3306; username=root; password=; database=projectppk; SslMode=none; Convert Zero Datetime=True;";
+            String connectionInfo = "datasource=localhost; port=3306; username=root; password=bumiasri; database=projectppk; SslMode=none; Convert Zero Datetime=True;";
             connection = new MySqlConnection(connectionInfo);
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -27,7 +27,7 @@ namespace projekppk
 
         private void Order_Load(object sender, EventArgs e)
         {
-            string query = "select * from transaksi";
+            string query = "select t.id, t.tanggal_pinjam, t.tanggal_kembali, t.nama, t.no_telpon, m.merk, m.tipe, m.plat_nomor, DATEDIFF(t.tanggal_kembali, t.tanggal_pinjam) * m.harga as biaya from transaksi t join mobil m on t.id_mobil = m.id";
             //int,merk,tipe,tanggal_pinjam,tanggal_kembali,nama
             connection.Open();
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -35,13 +35,16 @@ namespace projekppk
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlDataReader reader;
             reader = command.ExecuteReader();
-            materialListView1.View = View.Details;
-            materialListView1.Columns.Add("NO");
-            materialListView1.Columns.Add("MERK");
-            materialListView1.Columns.Add("TIPE");
-            materialListView1.Columns.Add("TANGGAL PINJAM");
-            materialListView1.Columns.Add("TANGGAL KEMBALI");
-            materialListView1.Columns.Add("NAMA");
+            RiwayatOrder.View = View.Details;
+            RiwayatOrder.Columns.Add("NO");
+            RiwayatOrder.Columns.Add("MERK");
+            RiwayatOrder.Columns.Add("TIPE");
+            RiwayatOrder.Columns.Add("NO POLISI");
+            RiwayatOrder.Columns.Add("NAMA");
+            RiwayatOrder.Columns.Add("NO TELEPON");
+            RiwayatOrder.Columns.Add("TANGGAL PINJAM");
+            RiwayatOrder.Columns.Add("TANGGAL KEMBALI");
+            RiwayatOrder.Columns.Add("BIAYA");
 
 
             while (reader.Read())
@@ -50,18 +53,22 @@ namespace projekppk
                 DateTime parseDatepinjam = DateTime.Parse(reader["tanggal_pinjam"].ToString());
                 DateTime parseDatekembali = DateTime.Parse(reader["tanggal_kembali"].ToString());
 
-                item.Text = reader["int"].ToString();
+                item.Text = reader["id"].ToString();
                 item.SubItems.Add(reader["merk"].ToString());
                 item.SubItems.Add(reader["tipe"].ToString());
+                item.SubItems.Add(reader["plat_nomor"].ToString());
+                item.SubItems.Add(reader["nama"].ToString());
+                item.SubItems.Add(reader["no_telpon"].ToString());
                 item.SubItems.Add(parseDatepinjam.ToString("d"));
                 item.SubItems.Add(parseDatekembali.ToString("d"));
+                item.SubItems.Add(reader["biaya"].ToString());
 
-                
-               
+
+
                 item.SubItems.Add(reader["nama"].ToString());
-                materialListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                materialListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                materialListView1.Items.Add(item);
+                RiwayatOrder.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                RiwayatOrder.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                RiwayatOrder.Items.Add(item);
 
             }
 

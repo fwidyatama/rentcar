@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.lblMerk = new MaterialSkin.Controls.MaterialLabel();
-            this.tbMerk = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.labelTipe = new MaterialSkin.Controls.MaterialLabel();
-            this.tbTipe = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelTanggal = new MaterialSkin.Controls.MaterialLabel();
             this.labelPengembalian = new MaterialSkin.Controls.MaterialLabel();
@@ -39,6 +37,12 @@
             this.labelPelanggan = new MaterialSkin.Controls.MaterialLabel();
             this.labelNama = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnsewamobil = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.comboBoxTersedia = new System.Windows.Forms.ComboBox();
+            this.tbTelpon = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.comboBoxMerk = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipe = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblMerk
@@ -54,23 +58,6 @@
             this.lblMerk.TabIndex = 0;
             this.lblMerk.Text = "Merk";
             // 
-            // tbMerk
-            // 
-            this.tbMerk.Depth = 0;
-            this.tbMerk.Hint = "";
-            this.tbMerk.Location = new System.Drawing.Point(243, 108);
-            this.tbMerk.MaxLength = 32767;
-            this.tbMerk.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tbMerk.Name = "tbMerk";
-            this.tbMerk.PasswordChar = '\0';
-            this.tbMerk.SelectedText = "";
-            this.tbMerk.SelectionLength = 0;
-            this.tbMerk.SelectionStart = 0;
-            this.tbMerk.Size = new System.Drawing.Size(197, 23);
-            this.tbMerk.TabIndex = 1;
-            this.tbMerk.TabStop = false;
-            this.tbMerk.UseSystemPasswordChar = false;
-            // 
             // labelTipe
             // 
             this.labelTipe.AutoSize = true;
@@ -84,30 +71,13 @@
             this.labelTipe.TabIndex = 2;
             this.labelTipe.Text = "Tipe";
             // 
-            // tbTipe
-            // 
-            this.tbTipe.Depth = 0;
-            this.tbTipe.Hint = "";
-            this.tbTipe.Location = new System.Drawing.Point(243, 146);
-            this.tbTipe.MaxLength = 32767;
-            this.tbTipe.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tbTipe.Name = "tbTipe";
-            this.tbTipe.PasswordChar = '\0';
-            this.tbTipe.SelectedText = "";
-            this.tbTipe.SelectionLength = 0;
-            this.tbTipe.SelectionStart = 0;
-            this.tbTipe.Size = new System.Drawing.Size(197, 23);
-            this.tbTipe.TabIndex = 3;
-            this.tbTipe.TabStop = false;
-            this.tbTipe.UseSystemPasswordChar = false;
-            // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(243, 197);
+            this.dateTimePicker1.Location = new System.Drawing.Point(243, 227);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 20);
             this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // labelTanggal
             // 
@@ -115,7 +85,7 @@
             this.labelTanggal.Depth = 0;
             this.labelTanggal.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelTanggal.Location = new System.Drawing.Point(40, 197);
+            this.labelTanggal.Location = new System.Drawing.Point(40, 229);
             this.labelTanggal.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelTanggal.Name = "labelTanggal";
             this.labelTanggal.Size = new System.Drawing.Size(149, 19);
@@ -128,7 +98,7 @@
             this.labelPengembalian.Depth = 0;
             this.labelPengembalian.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelPengembalian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPengembalian.Location = new System.Drawing.Point(40, 255);
+            this.labelPengembalian.Location = new System.Drawing.Point(40, 268);
             this.labelPengembalian.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelPengembalian.Name = "labelPengembalian";
             this.labelPengembalian.Size = new System.Drawing.Size(160, 19);
@@ -137,7 +107,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(243, 255);
+            this.dateTimePicker2.Location = new System.Drawing.Point(243, 266);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(197, 20);
             this.dateTimePicker2.TabIndex = 7;
@@ -148,7 +118,7 @@
             this.labelPelanggan.Depth = 0;
             this.labelPelanggan.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelPelanggan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPelanggan.Location = new System.Drawing.Point(40, 301);
+            this.labelPelanggan.Location = new System.Drawing.Point(40, 306);
             this.labelPelanggan.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelPelanggan.Name = "labelPelanggan";
             this.labelPelanggan.Size = new System.Drawing.Size(122, 19);
@@ -159,7 +129,7 @@
             // 
             this.labelNama.Depth = 0;
             this.labelNama.Hint = "";
-            this.labelNama.Location = new System.Drawing.Point(243, 297);
+            this.labelNama.Location = new System.Drawing.Point(243, 306);
             this.labelNama.MaxLength = 32767;
             this.labelNama.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelNama.Name = "labelNama";
@@ -174,25 +144,102 @@
             // 
             // btnsewamobil
             // 
+            this.btnsewamobil.AutoSize = true;
             this.btnsewamobil.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnsewamobil.Depth = 0;
+            this.btnsewamobil.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnsewamobil.Icon = null;
-            this.btnsewamobil.Location = new System.Drawing.Point(174, 340);
+            this.btnsewamobil.Location = new System.Drawing.Point(0, 402);
             this.btnsewamobil.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnsewamobil.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnsewamobil.Name = "btnsewamobil";
             this.btnsewamobil.Primary = false;
-            this.btnsewamobil.Size = new System.Drawing.Size(196, 36);
+            this.btnsewamobil.Size = new System.Drawing.Size(573, 36);
             this.btnsewamobil.TabIndex = 10;
             this.btnsewamobil.Text = "Sewa Mobil";
             this.btnsewamobil.UseVisualStyleBackColor = true;
             this.btnsewamobil.Click += new System.EventHandler(this.btnsewamobil_Click);
             // 
-            // sewa
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(40, 188);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(109, 19);
+            this.materialLabel1.TabIndex = 11;
+            this.materialLabel1.Text = "Mobil Tersedia";
+            // 
+            // comboBoxTersedia
+            // 
+            this.comboBoxTersedia.FormattingEnabled = true;
+            this.comboBoxTersedia.Location = new System.Drawing.Point(243, 189);
+            this.comboBoxTersedia.Name = "comboBoxTersedia";
+            this.comboBoxTersedia.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxTersedia.TabIndex = 13;
+            // 
+            // tbTelpon
+            // 
+            this.tbTelpon.Depth = 0;
+            this.tbTelpon.Hint = "";
+            this.tbTelpon.Location = new System.Drawing.Point(243, 345);
+            this.tbTelpon.MaxLength = 32767;
+            this.tbTelpon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tbTelpon.Name = "tbTelpon";
+            this.tbTelpon.PasswordChar = '\0';
+            this.tbTelpon.SelectedText = "";
+            this.tbTelpon.SelectionLength = 0;
+            this.tbTelpon.SelectionStart = 0;
+            this.tbTelpon.Size = new System.Drawing.Size(197, 23);
+            this.tbTelpon.TabIndex = 15;
+            this.tbTelpon.TabStop = false;
+            this.tbTelpon.UseSystemPasswordChar = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(40, 345);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(152, 19);
+            this.materialLabel2.TabIndex = 14;
+            this.materialLabel2.Text = "No Telpon Pelanggan";
+            // 
+            // comboBoxMerk
+            // 
+            this.comboBoxMerk.FormattingEnabled = true;
+            this.comboBoxMerk.Location = new System.Drawing.Point(243, 113);
+            this.comboBoxMerk.Name = "comboBoxMerk";
+            this.comboBoxMerk.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxMerk.TabIndex = 16;
+            this.comboBoxMerk.SelectedIndexChanged += new System.EventHandler(this.comboBoxMerk_SelectionIndexChange);
+            // 
+            // comboBoxTipe
+            // 
+            this.comboBoxTipe.FormattingEnabled = true;
+            this.comboBoxTipe.Location = new System.Drawing.Point(243, 151);
+            this.comboBoxTipe.Name = "comboBoxTipe";
+            this.comboBoxTipe.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxTipe.TabIndex = 17;
+            this.comboBoxTipe.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipe_SelectedIndexChanged);
+            // 
+            // Sewa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 402);
+            this.ClientSize = new System.Drawing.Size(573, 438);
+            this.Controls.Add(this.comboBoxTipe);
+            this.Controls.Add(this.comboBoxMerk);
+            this.Controls.Add(this.tbTelpon);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.comboBoxTersedia);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnsewamobil);
             this.Controls.Add(this.labelNama);
             this.Controls.Add(this.labelPelanggan);
@@ -200,11 +247,9 @@
             this.Controls.Add(this.labelPengembalian);
             this.Controls.Add(this.labelTanggal);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.tbTipe);
             this.Controls.Add(this.labelTipe);
-            this.Controls.Add(this.tbMerk);
             this.Controls.Add(this.lblMerk);
-            this.Name = "sewa";
+            this.Name = "Sewa";
             this.Text = "sewa";
             this.Load += new System.EventHandler(this.sewa_Load);
             this.ResumeLayout(false);
@@ -215,9 +260,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel lblMerk;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tbMerk;
         private MaterialSkin.Controls.MaterialLabel labelTipe;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tbTipe;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MaterialSkin.Controls.MaterialLabel labelTanggal;
         private MaterialSkin.Controls.MaterialLabel labelPengembalian;
@@ -225,5 +268,11 @@
         private MaterialSkin.Controls.MaterialLabel labelPelanggan;
         private MaterialSkin.Controls.MaterialSingleLineTextField labelNama;
         private MaterialSkin.Controls.MaterialFlatButton btnsewamobil;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.ComboBox comboBoxTersedia;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tbTelpon;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.ComboBox comboBoxMerk;
+        private System.Windows.Forms.ComboBox comboBoxTipe;
     }
 }

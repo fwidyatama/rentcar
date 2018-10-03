@@ -113,7 +113,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.btnSewa);
             this.Name = "home";
-            this.Text = "home";
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

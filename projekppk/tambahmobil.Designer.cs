@@ -41,17 +41,19 @@
             // 
             // btnsewamobil
             // 
+            this.btnsewamobil.AutoSize = true;
             this.btnsewamobil.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnsewamobil.Depth = 0;
+            this.btnsewamobil.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnsewamobil.Icon = null;
-            this.btnsewamobil.Location = new System.Drawing.Point(188, 299);
+            this.btnsewamobil.Location = new System.Drawing.Point(0, 295);
             this.btnsewamobil.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnsewamobil.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnsewamobil.Name = "btnsewamobil";
             this.btnsewamobil.Primary = false;
-            this.btnsewamobil.Size = new System.Drawing.Size(103, 36);
+            this.btnsewamobil.Size = new System.Drawing.Size(516, 36);
             this.btnsewamobil.TabIndex = 21;
-            this.btnsewamobil.Text = "Sewa Mobil";
+            this.btnsewamobil.Text = "Tambah";
             this.btnsewamobil.UseVisualStyleBackColor = true;
             this.btnsewamobil.Click += new System.EventHandler(this.btnsewamobil_Click);
             // 
@@ -175,11 +177,11 @@
             this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
-            // tambahmobil
+            // TambahMobil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 361);
+            this.ClientSize = new System.Drawing.Size(516, 331);
             this.Controls.Add(this.materialSingleLineTextField2);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialSingleLineTextField1);
@@ -189,8 +191,8 @@
             this.Controls.Add(this.labelTipe);
             this.Controls.Add(this.tbMerk);
             this.Controls.Add(this.lblMerk);
-            this.Name = "tambahmobil";
-            this.Text = "tambahmobil";
+            this.Name = "TambahMobil";
+            this.Text = "Tambah Mobil";
             this.Load += new System.EventHandler(this.tambahmobil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,3 +35,4 @@ C:\Users\Arda\Desktop\rentcar\projekppk\obj\Debug\projekppk.pdb
 C:\Users\Arda\Desktop\rentcar\projekppk\obj\Debug\projekppk.Login.resources
 C:\Users\Widyatama\source\repos\projekppk\projekppk\obj\Debug\projekppk.Login.resources
 C:\Users\Widyatama\source\repos\projekppk\projekppk\obj\Debug\projekppk.Order.resources
+C:\Users\Arda\Desktop\rentcar\projekppk\obj\Debug\projekppk.Order.resources
